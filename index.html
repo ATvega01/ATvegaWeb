@@ -1,9 +1,295 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ATVega</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATvega | Adaptive Data Migration</title>
+  <meta name="theme-color" content="#FBFBFB" />
+  <link rel="icon" href="favicon.png" type="image/png" sizes="any" />
+  <link rel="apple-touch-icon" href="favicon.png" sizes="any" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>We are coming soon!</h1>
+  <div class="site-shell">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">
+          <img src="ATvega.png" alt="ATvega logo" />
+        </div>
+        
+      </a>
+      <nav>
+        <a class="nav-link active" href="index.html" data-nav-target="home" aria-current="page">Home</a>
+        <a class="nav-link" href="#products" data-nav-target="products">Products</a>
+        <a class="nav-link" href="#solutions" data-nav-target="solutions">Solutions</a>
+        <a class="nav-link" href="#about" data-nav-target="about">About</a>
+        <a class="nav-link" href="#contact" data-nav-target="contact">Contact</a>
+        <a class="nav-link" href="#support" data-nav-target="support">Support</a>
+        <a class="nav-link" href="#docs" data-nav-target="docs">Docs</a>
+      </nav>
+    </header>
+
+    <section class="hero" data-nav-section="home">
+      <div class="hero-copy">
+        <p class="section-title">Data migration building blocks</p>
+        <h2>A data migration toolkit for bulk operations and custom flows.</h2>
+        <p>ATvega is focused on reusable components for large-scale data movement. The work centers on specialized clients for storage access, database operations, and orchestration so migration tasks can be assembled around specific business needs.</p>
+        <div class="hero-support">
+          <div class="hero-support-item">
+            <h3>What ATvega offers</h3>
+            <p>A set of focused components for bulk object & file operations, database actions, and coordinated flow orchestration.</p>
+          </div>
+          <div class="hero-support-item">
+            <h3>Design approach</h3>
+            <p>Components are built to be combined into custom migration workflows rather than forcing every project into a single fixed pattern.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-nav-section="products">
+      <p class="section-title">Products and components</p>
+      <h2 class="section-heading">Focused building blocks for migration and data movement.</h2>
+      <p class="section-text">The current component set is organized around practical capabilities for bulk operations, storage access, database work, and flow control.</p>
+      <div class="mode-grid" aria-label="Supported delivery modes">
+        <article class="mode-card">
+          <h3>Category: Migration Workflows</h3>
+          <p>Use the product set for one-time or phased migrations across object, file, and database systems with orchestration and reporting.</p>
+        </article>
+        <article class="mode-card">
+          <h3>Category: Real-time and Continuous Sync</h3>
+          <p>Use the same components for recurring or near real-time sync flows such as S3-to-Blob, including change detection, retries, and operational monitoring.</p>
+        </article>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>ATDellCASClient</h3>
+          <p>Handles large/bulk operations like download, upload, delete, and related actions on Dell Centera or ECS using the CAS protocol with remarkable performance.</p>
+        </article>
+        <article class="feature-card">
+          <h3>ATS3Client</h3>
+          <p>Handles large/bulk operations like read, download, upload, delete, reports, and related actions on any S3-compatible system such as Dell ECS, NetApp StorageGrid, NetApp ONTAP, AWS S3, and similar platforms with remarkable performance.</p>
+        </article>
+        <article class="feature-card">
+          <h3>ATDBClient</h3>
+          <p>Handles large/bulk query, insert, update, and related operations on known database systems with remarkable performance.</p>
+        </article>
+        <article class="feature-card">
+          <h3>ATGenFileClient</h3>
+          <p>Handles large/bulk operations like read, download, upload, delete, reports, and related actions over general NFS and SMB protocols with remarkable performance.</p>
+        </article>
+        <article class="feature-card">
+          <h3>ATAzureBlobClient</h3>
+          <p>Handles large/bulk operations like read, download, upload, delete, reports, and related actions on Azure Blob storage.</p>
+        </article>
+        <article class="feature-card">
+          <h3>ATFlow</h3>
+          <p>Master/controller that orchestrates data flows using different components for end-to-end migration workflows.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Many more coming</h3>
+          <p>The component set continues to expand with more protocols, storage targets, and workflow capabilities.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" data-nav-section="solutions">
+      <p class="section-title">Solutions</p>
+      <h2 class="section-heading">Custom flow support for migration and sync scenarios.</h2>
+      <p class="section-text">We use these components to build focused data flows for both migration and continuous sync workloads, based on specific business logic and operational requirements.</p>
+      <div class="usecase-shell">
+        <button class="usecase-nav usecase-nav-prev" type="button" aria-label="Show previous use case">←</button>
+        <div class="usecase-slider" aria-label="Migration and sync use cases">
+          <article class="usecase-slide">
+          <h3>Solution Pattern 1</h3>
+          <p class="usecase-intro">Dell ECS to Azure Blob Object migration with database updates.</p>
+          <div class="usecase-flow">
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">database</span>DB</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">inventory_2</span>CAS</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud</span>Blob</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">database</span>DB</span>
+          </div>
+          <ul class="usecase-notes">
+            <li>Get the meta-data and the Clip-ID from a source database.</li>
+            <li>Download the objects from Dell CAS storage.</li>
+            <li>Upload the data to Azure Blob storage.</li>
+            <li>Update the database with the resulting status or reference details.</li>
+          </ul>
+        </article>
+        <article class="usecase-slide">
+          <h3>Solution Pattern 2</h3>
+          <p class="usecase-intro">S3-compatible source to Azure Blob migration</p>
+          <div class="usecase-flow">
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">swap_horiz</span>Transfer</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud</span>Blob</span>
+          </div>
+          <ul class="usecase-notes">
+            <li>Pull content from S3-compatible systems such as Dell ECS or AWS S3.</li>
+            <li>Apply bulk transfer and reporting logic.</li>
+            <li>Publish the transferred data to Azure Blob storage.</li>
+            <li>Track progress and completion through the workflow controller.</li>
+          </ul>
+        </article>
+        <article class="usecase-slide">
+          <h3>Solution Pattern 3</h3>
+          <p class="usecase-intro">Database-to-database and object-to-object migration patterns.</p>
+          <div class="usecase-flow">
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">database</span>DB</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">database</span>DB</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">deployed_code</span>Object</span>
+          </div>
+          <ul class="usecase-notes">
+            <li>Move data between database systems with query and update operations.</li>
+            <li>Support blob-to-S3 and file-to-object transfer paths.</li>
+            <li>Handle validation, reporting, and retry logic as part of the orchestration.</li>
+            <li>Adapt the flow to the source, destination, and business rules.</li>
+          </ul>
+        </article>
+        <article class="usecase-slide">
+          <h3>Solution Pattern 4</h3>
+          <p class="usecase-intro">S3-to-S3 migration.</p>
+          <div class="usecase-flow">
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">monitoring</span>Report</span>
+          </div>
+          <ul class="usecase-notes">
+            <li>Copy large data sets between S3-compatible systems.</li>
+            <li>Apply bulk transfer, reporting, and metadata handling.</li>
+            <li>Support multi-source and multi-destination migration scenarios.</li>
+            <li>Track transfer progress and completion through the orchestration flow.</li>
+          </ul>
+        </article>
+        <article class="usecase-slide">
+          <h3>Solution Pattern 5</h3>
+          <p class="usecase-intro">Blob-to-S3 migration.</p>
+          <div class="usecase-flow">
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud</span>Blob</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">swap_horiz</span>Transfer</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
+          </div>
+          <ul class="usecase-notes">
+            <li>Move data from Azure Blob storage to S3-compatible storage.</li>
+            <li>Support large-scale object movement with reporting and validation.</li>
+            <li>Fit into broader workflows that combine object storage and database updates.</li>
+            <li>Reuse the same orchestration model for additional storage targets.</li>
+          </ul>
+        </article>
+        <article class="usecase-slide">
+          <h3>Solution Pattern 6</h3>
+          <p class="usecase-intro">S3-to-Blob continuous sync.</p>
+          <div class="usecase-flow">
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">sync</span>Sync</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud</span>Blob</span>
+            <span class="arrow">↻</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">repeat</span>Repeat</span>
+          </div>
+          <ul class="usecase-notes">
+            <li>Run scheduled or continuous sync from S3-compatible source buckets to Azure Blob containers.</li>
+            <li>Detect and process new or changed objects during each cycle.</li>
+            <li>Support reporting, retries, and integrity-oriented transfer checks.</li>
+            <li>Reuse ATFlow orchestration for long-running sync operations along with bulk migrations.</li>
+          </ul>
+        </article>
+        <article class="usecase-slide">
+          <h3>Solution Pattern 7</h3>
+          <p class="usecase-intro">Many more migrations and sync patterns are possible.</p>
+          <div class="usecase-flow">
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">hub</span>Any</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">hub</span>Any</span>
+            <span class="arrow">→</span>
+            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">hub</span>Any</span>
+          </div>
+          <ul class="usecase-notes">
+            <li>Additional combinations can be assembled for file-to-object, object-to-file, and any-to-any migration needs.</li>
+            <li>The same toolset can run one-time migrations and ongoing sync jobs depending on the workload.</li>
+            <li>Each flow can be tailored to transfer volume, sync frequency, and reporting requirements.</li>
+            <li>The orchestration model can be reused across different storage and database environments.</li>
+          </ul>
+        </article>
+        </div>
+        <button class="usecase-nav usecase-nav-next" type="button" aria-label="Show next use case">→</button>
+      </div>
+    </section>
+
+    <section class="section" data-nav-section="about">
+      <p class="section-title">About</p>
+      <h2 class="section-heading">ATvega is building practical migration tooling around reusable components.</h2>
+      <p class="section-text">The focus is on dependable building blocks for bulk operations, storage access, database work, and orchestration rather than a single fixed product path for every migration.</p>
+    </section>
+
+    <section class="section" data-nav-section="contact">
+      <p class="section-title">Contact</p>
+      <h2 class="section-heading">Let’s discuss the migration need you are working on.</h2>
+      <p class="section-text">If you want to talk through a specific storage target, database workflow, or custom data movement scenario, get in touch and we can discuss how the components may fit. Reach us at <a class="email-link" href="mailto:hello@atvega.com">hello@atvega.com</a></p>
+    </section>
+
+    <section class="section" data-nav-section="support">
+      <p class="section-title">Support</p>
+      <h2 class="section-heading">Support is aligned to the component and workflow you are using.</h2>
+      <p class="section-text">We can help with implementation questions, operational planning, and how the individual components fit into a larger migration flow. Reach us at <a class="email-link" href="mailto:support@atvega.com">support@atvega.com</a></p>
+    </section>
+
+    <section class="section" data-nav-section="docs">
+      <p class="section-title">Docs</p>
+      <!-- <h2 class="section-heading">Reference material for the current component set.</h2> -->
+      <p class="section-text">No documentation available at this time, which means we will take care of the end-to-end migration process for you!</p>
+    </section>
+
+  </div>
+  <script src="nav-scroll.js"></script>
+  <script>
+    const slider = document.querySelector('.usecase-slider');
+    const prevButton = document.querySelector('.usecase-nav-prev');
+    const nextButton = document.querySelector('.usecase-nav-next');
+
+    if (slider && prevButton && nextButton) {
+      const updateNavState = () => {
+        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+        prevButton.disabled = slider.scrollLeft <= 1;
+        nextButton.disabled = slider.scrollLeft >= maxScrollLeft - 1;
+        prevButton.setAttribute('aria-disabled', String(prevButton.disabled));
+        nextButton.setAttribute('aria-disabled', String(nextButton.disabled));
+      };
+
+      const scrollAmount = () => slider.clientWidth || 420;
+
+      prevButton.addEventListener('click', () => {
+        slider.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+      });
+
+      nextButton.addEventListener('click', () => {
+        slider.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+      });
+
+      slider.addEventListener('wheel', (event) => {
+        if (Math.abs(event.deltaY) > 0) {
+          event.preventDefault();
+          slider.scrollBy({ left: event.deltaY, behavior: 'auto' });
+        }
+      }, { passive: false });
+
+      slider.addEventListener('scroll', updateNavState);
+      window.addEventListener('resize', updateNavState);
+      updateNavState();
+    }
+  </script>
 </body>
 </html>

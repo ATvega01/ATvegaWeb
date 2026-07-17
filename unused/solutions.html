@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions | ATvega</title>
+  <meta name="theme-color" content="#FBFBFB" />
+  <link rel="icon" href="favicon.png" type="image/png" sizes="any" />
+  <link rel="apple-touch-icon" href="favicon.png" sizes="any" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="header">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">
+          <img src="ATvega.png" alt="ATvega logo" />
+        </div>
+        
+      </a>
+      <nav>
+        <a class="nav-link" href="index.html#home" data-nav-target="home">Home</a>
+        <a class="nav-link" href="index.html#products" data-nav-target="products">Products</a>
+        <a class="nav-link active" href="index.html#solutions" data-nav-target="solutions" aria-current="page">Solutions</a>
+        <a class="nav-link" href="index.html#about" data-nav-target="about">About</a>
+        <a class="nav-link" href="index.html#contact" data-nav-target="contact">Contact</a>
+        <a class="nav-link" href="index.html#support" data-nav-target="support">Support</a>
+        <a class="nav-link" href="index.html#docs" data-nav-target="docs">Docs</a>
+      </nav>
+    </header>
+
+    <section class="section" data-nav-section="solutions">
+      <p class="section-title">Solutions</p>
+      <h2 class="section-heading">Complete migration and integration solutions for modern environments.</h2>
+      <p class="section-text">ATvega solves the hard problems when storage, protocols and processes need to work together. Our solutions support both standard transfers and custom workflow requirements.</p>
+    </section>
+
+    <section class="section" data-nav-section="solutions">
+      <div class="solution-grid">
+        <article class="solution-card">
+          <h3>Any-to-Any Data Migration</h3>
+          <p>Transfer data between any of the following sources and targets while preserving structure and metadata:</p>
+          <ul class="list-strong">
+            <li>Dell ECS using CAS or S3</li>
+            <li>Isilon using SMB/NFS/APIs</li>
+            <li>NetApp using SMB/NFS/APIs</li>
+            <li>Generic NAS share/export</li>
+            <li>Generic S3 / CAS storage</li>
+            <li>Azure Blob</li>
+            <li>AWS S3</li>
+          </ul>
+        </article>
+        <article class="solution-card">
+          <h3>Custom Flow Support</h3>
+          <p>We build custom flows to support your business logic, including database updates, validation stages, metadata mapping and automated handoffs.</p>
+        </article>
+        <article class="solution-card">
+          <h3>Optional Hash Verification</h3>
+          <p>For critical migrations, we offer optional hash value checks to confirm destination data integrity after transfer.</p>
+        </article>
+        <article class="solution-card">
+          <h3>NAS Migration</h3>
+          <p>Advanced support for NAS migrations with SMB, NFS and export-based transfers, including performance tuning and file system preservation.</p>
+        </article>
+        <article class="solution-card">
+          <h3>Server Data Migration</h3>
+          <p>Move server data safely between environments, with support for entire datasets, shared storage, and application-aware delivery.</p>
+        </article>
+      </div>
+    </section>
+
+
+  </div>
+  <script src="nav-scroll.js"></script>
+</body>
+</html>
