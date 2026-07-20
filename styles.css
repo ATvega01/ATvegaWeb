@@ -357,15 +357,14 @@ nav {
 }
 
 .usecase-shell {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 0.75rem;
+  position: relative;
+  width: 100%;
 }
 
 .usecase-slider {
   display: flex;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 1.25rem;
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 0;
@@ -384,19 +383,39 @@ nav {
 }
 
 .usecase-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
   border: 0;
   width: 2.9rem;
   height: 2.9rem;
   border-radius: 999px;
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.55);
   color: var(--text);
   box-shadow: var(--shadow);
   cursor: pointer;
   font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.22s ease, background-color 0.22s ease;
+}
+
+.usecase-shell:hover .usecase-nav,
+.usecase-shell:focus-within .usecase-nav,
+.usecase-shell.nav-visible .usecase-nav {
+  opacity: 0.85;
 }
 
 .usecase-nav:hover {
-  background: var(--surface-strong);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.usecase-nav-prev {
+  left: 0.65rem;
+}
+
+.usecase-nav-next {
+  right: 0.65rem;
 }
 
 .usecase-nav:disabled {
@@ -408,73 +427,172 @@ nav {
 .usecase-slide {
   flex: 0 0 100%;
   max-width: 100%;
-  min-height: 460px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  min-height: 0;
   scroll-snap-align: start;
   background: var(--surface);
   border: 1px solid rgba(11, 42, 45, 0.08);
   border-radius: 20px;
-  padding: 2.1rem 2.2rem;
+  padding: 1.5rem 3rem;
   box-shadow: 0 24px 50px rgba(11, 42, 45, 0.08);
 }
 
 .usecase-slide h3 {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.5rem;
   font-size: 1.35rem;
   color: var(--brand);
 }
 
 .usecase-intro {
-  margin: 0 0 1.1rem;
+  margin: 0 0 0.75rem;
   color: var(--text);
   font-weight: 700;
   line-height: 1.65;
   font-size: 1.12rem;
 }
 
-.usecase-flow {
+.usecase-media {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 0.9rem;
+}
+
+.control-hub {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.4rem;
+}
+
+.control-hub::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.45rem;
+  width: 2px;
+  height: 0.75rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    #2fa84f 0 4px,
+    transparent 4px 7px
+  );
+  opacity: 0.9;
+}
+
+.control-targets {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-  margin: 0 0 1rem;
-  color: var(--text-muted);
-  font-size: 0.95rem;
+  gap: 1.1rem;
+  justify-content: center;
 }
 
-.usecase-flow span {
+.control-node {
+  position: relative;
+  padding-top: 0.95rem;
+}
+
+.control-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 0.95rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    #2fa84f 0 4px,
+    transparent 4px 7px
+  );
+  opacity: 0.9;
+}
+
+.data-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.3rem;
+}
+
+.usecase-media img {
+  width: clamp(170px, 24vw, 280px);
+  height: clamp(72px, 10vw, 125px);
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.data-link {
   display: inline-flex;
+  width: clamp(26px, 3vw, 42px);
+  border-top: 2px dashed #2f7fc9;
+  position: relative;
+  opacity: 0.95;
+}
+
+.data-link::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: -5px;
+  border-left: 6px solid #2f7fc9;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.op-label {
+  margin: 0.35rem 0 0;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.25;
+}
+
+.usecase-media.pattern-one .control-targets {
+  justify-content: space-between;
+}
+
+.usecase-media.pattern-one .control-node {
+  width: clamp(150px, 22vw, 280px);
+}
+
+.usecase-media.pattern-one {
+  display: flex;
+  flex: 1 1 auto;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(31, 168, 198, 0.08);
+  justify-content: center;
+  min-height: 0;
 }
 
-.usecase-flow .node {
-  font-weight: 600;
-  color: var(--text);
-  border: 1px solid rgba(31, 168, 198, 0.22);
+.usecase-media.pattern-one img {
+  width: min(100%, 920px);
+  max-height: 320px;
+  height: auto;
 }
 
-.flow-icon.material-symbols-outlined {
-  font-size: 1rem;
-  line-height: 1;
-  font-variation-settings: 'FILL' 1;
-  color: var(--brand);
+.usecase-media.pattern-one-wide img {
+  width: min(100%, 1060px);
 }
 
-.usecase-flow .arrow {
-  color: var(--brand);
-  font-weight: 700;
+.usecase-media.pattern-six img {
+  width: min(100%, 820px);
 }
 
 .usecase-notes {
   margin: 0;
+  margin-top: auto;
   padding-left: 1.2rem;
   color: var(--text-muted);
   display: grid;
-  gap: 0.8rem;
-  line-height: 1.72;
+  gap: 0.45rem;
+  line-height: 1.5;
   font-size: 1rem;
 }
 
@@ -608,6 +726,20 @@ textarea {
   .grid-two,
   .mode-grid {
     grid-template-columns: 1fr;
+  }
+
+  .usecase-nav {
+    opacity: 0.75;
+  }
+
+  .usecase-slide {
+    height: auto;
+    padding: 1.2rem 1rem;
+    min-height: 0;
+  }
+
+  .data-link {
+    width: 26px;
   }
 
   .footer {

@@ -7,7 +7,6 @@
   <meta name="theme-color" content="#FBFBFB" />
   <link rel="icon" href="favicon.png" type="image/png" sizes="any" />
   <link rel="apple-touch-icon" href="favicon.png" sizes="any" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -84,7 +83,7 @@
           <p>Handles large/bulk operations like read, download, upload, delete, reports, and related actions on Azure Blob storage.</p>
         </article>
         <article class="feature-card">
-          <h3>ATFlow</h3>
+          <h3>ATflow</h3>
           <p>Master/controller that orchestrates data flows using different components for end-to-end migration workflows.</p>
         </article>
         <article class="feature-card">
@@ -103,15 +102,9 @@
         <div class="usecase-slider" aria-label="Migration and sync use cases">
           <article class="usecase-slide">
           <h3>Solution Pattern 1</h3>
-          <p class="usecase-intro">Dell ECS to Azure Blob Object migration with database updates.</p>
-          <div class="usecase-flow">
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">database</span>DB</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">inventory_2</span>CAS</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud</span>Blob</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">database</span>DB</span>
+          <p class="usecase-intro">Dell ECS CAS bucket to Azure Blob objects migration with database updates.</p>
+            <div class="usecase-media pattern-one pattern-one-wide" aria-label="Flow components">
+            <img src="media/Sol01_CAS_to_Blob.png" alt="Dell ECS CAS to Azure Blob migration with database updates" />
           </div>
           <ul class="usecase-notes">
             <li>Get the meta-data and the Clip-ID from a source database.</li>
@@ -123,12 +116,8 @@
         <article class="usecase-slide">
           <h3>Solution Pattern 2</h3>
           <p class="usecase-intro">S3-compatible source to Azure Blob migration</p>
-          <div class="usecase-flow">
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">swap_horiz</span>Transfer</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud</span>Blob</span>
+          <div class="usecase-media pattern-one" aria-label="Flow components">
+            <img src="media/Sol02_S3_to_Blob.png" alt="S3-compatible source to Azure Blob migration" />
           </div>
           <ul class="usecase-notes">
             <li>Pull content from S3-compatible systems such as Dell ECS or AWS S3.</li>
@@ -139,30 +128,9 @@
         </article>
         <article class="usecase-slide">
           <h3>Solution Pattern 3</h3>
-          <p class="usecase-intro">Database-to-database and object-to-object migration patterns.</p>
-          <div class="usecase-flow">
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">database</span>DB</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">database</span>DB</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">deployed_code</span>Object</span>
-          </div>
-          <ul class="usecase-notes">
-            <li>Move data between database systems with query and update operations.</li>
-            <li>Support blob-to-S3 and file-to-object transfer paths.</li>
-            <li>Handle validation, reporting, and retry logic as part of the orchestration.</li>
-            <li>Adapt the flow to the source, destination, and business rules.</li>
-          </ul>
-        </article>
-        <article class="usecase-slide">
-          <h3>Solution Pattern 4</h3>
           <p class="usecase-intro">S3-to-S3 migration.</p>
-          <div class="usecase-flow">
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">monitoring</span>Report</span>
+          <div class="usecase-media pattern-one" aria-label="Flow components">
+            <img src="media/Sol03_S3_to_S3.png" alt="S3-to-S3 migration flow" />
           </div>
           <ul class="usecase-notes">
             <li>Copy large data sets between S3-compatible systems.</li>
@@ -172,14 +140,10 @@
           </ul>
         </article>
         <article class="usecase-slide">
-          <h3>Solution Pattern 5</h3>
+          <h3>Solution Pattern 4</h3>
           <p class="usecase-intro">Blob-to-S3 migration.</p>
-          <div class="usecase-flow">
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud</span>Blob</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">swap_horiz</span>Transfer</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
+          <div class="usecase-media pattern-one" aria-label="Flow components">
+            <img src="media/Sol04_Blob_to_S3.png" alt="Blob-to-S3 migration flow" />
           </div>
           <ul class="usecase-notes">
             <li>Move data from Azure Blob storage to S3-compatible storage.</li>
@@ -189,16 +153,10 @@
           </ul>
         </article>
         <article class="usecase-slide">
-          <h3>Solution Pattern 6</h3>
-          <p class="usecase-intro">S3-to-Blob continuous sync.</p>
-          <div class="usecase-flow">
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud_sync</span>S3</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">sync</span>Sync</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">cloud</span>Blob</span>
-            <span class="arrow">↻</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">repeat</span>Repeat</span>
+          <h3>Solution Pattern 5</h3>
+          <p class="usecase-intro">Continuous bi-directional sync between Blob &amp; S3</p>
+          <div class="usecase-media pattern-one" aria-label="Flow components">
+            <img src="media/Sol05_Blob_to_S3_sync.png" alt="Continuous bi-directional sync between Blob and S3" />
           </div>
           <ul class="usecase-notes">
             <li>Run scheduled or continuous sync from S3-compatible source buckets to Azure Blob containers.</li>
@@ -208,14 +166,10 @@
           </ul>
         </article>
         <article class="usecase-slide">
-          <h3>Solution Pattern 7</h3>
+          <h3>Solution Pattern 6</h3>
           <p class="usecase-intro">Many more migrations and sync patterns are possible.</p>
-          <div class="usecase-flow">
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">hub</span>Any</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">hub</span>Any</span>
-            <span class="arrow">→</span>
-            <span class="node"><span class="flow-icon material-symbols-outlined" aria-hidden="true">hub</span>Any</span>
+          <div class="usecase-media pattern-one pattern-six" aria-label="Flow components">
+            <img src="media/any-any-solution.png" alt="Any-to-any migration and sync solution" />
           </div>
           <ul class="usecase-notes">
             <li>Additional combinations can be assembled for file-to-object, object-to-file, and any-to-any migration needs.</li>
@@ -257,10 +211,20 @@
   <script src="nav-scroll.js"></script>
   <script>
     const slider = document.querySelector('.usecase-slider');
+    const sliderShell = document.querySelector('.usecase-shell');
     const prevButton = document.querySelector('.usecase-nav-prev');
     const nextButton = document.querySelector('.usecase-nav-next');
 
-    if (slider && prevButton && nextButton) {
+    if (slider && sliderShell && prevButton && nextButton) {
+      let hideNavTimeout;
+      const showNavTemporarily = () => {
+        sliderShell.classList.add('nav-visible');
+        window.clearTimeout(hideNavTimeout);
+        hideNavTimeout = window.setTimeout(() => {
+          sliderShell.classList.remove('nav-visible');
+        }, 1400);
+      };
+
       const updateNavState = () => {
         const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
         prevButton.disabled = slider.scrollLeft <= 1;
@@ -272,23 +236,31 @@
       const scrollAmount = () => slider.clientWidth || 420;
 
       prevButton.addEventListener('click', () => {
+        showNavTemporarily();
         slider.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
       });
 
       nextButton.addEventListener('click', () => {
+        showNavTemporarily();
         slider.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
       });
 
       slider.addEventListener('wheel', (event) => {
         if (Math.abs(event.deltaY) > 0) {
           event.preventDefault();
+          showNavTemporarily();
           slider.scrollBy({ left: event.deltaY, behavior: 'auto' });
         }
       }, { passive: false });
 
       slider.addEventListener('scroll', updateNavState);
+      slider.addEventListener('scroll', showNavTemporarily);
+      sliderShell.addEventListener('pointermove', showNavTemporarily);
+      sliderShell.addEventListener('focusin', showNavTemporarily);
+      sliderShell.addEventListener('touchstart', showNavTemporarily, { passive: true });
       window.addEventListener('resize', updateNavState);
       updateNavState();
+      showNavTemporarily();
     }
   </script>
 </body>
